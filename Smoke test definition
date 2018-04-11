@@ -1,0 +1,18 @@
+Hoje um colaborador da lista sobre Teste de Software [DFTestes] (http://br.groups.yahoo.com/group/DFTestes/)  perguntou em uma thread sobre PhantomJS qual era a difernça entre Smoke Test e Acceptance Test. Ai resolvi responder. Como a lista é somente de acesso aos usuários registrados, estou colocando um resumo, na minha ótica, a diferença entre eles:
+
+Dentro de um contexto ágil nós temos uma separação clara do que é smoke test e o que é teste de aceitação.
+
+* Smoke Test: conjunto de testes (bem menor do que o conjunto de teste de aceitaçaõ, que vai configurar posteriormente em uma regressão) com o intuito de validar se os pontos maisimportantes da aplicação continuam funcionando após as alterações.
+
+* Teste de Aceitação: São os testes funcionais que conhecemos. Em um contexto ágil eles são chamados de aceitação ao invés de funcional, pela ótica que adotamos a estes testes, que vão tanto validar a aplicação funcionalmente como validar também da ótica de um usuário (fazer uma venda completa, por exemplo). Estes testes são mais demorados para a execução, mesmo automatizada, pois são um conjunto, as vezes, muito grande de testes e, consequentemente, demorando mais para executar e prover um feedback mais rápido.
+
+
+**Exemplos**
+
+Em um site de e-commerce (tipo Submarino) duas das principais funcionalidades são a pesquisa de produtos e a compra de produtos. Se pegarmos os testes automatizados destas duas funcionalidades (não precisa ser todos os testes, somente os testes tipo "caminho feliz") e colocarmos para serem executados automaticamente a uma determinada condição (um commit, ao final de cada dia, etc...) poderemos chamar estes testes de smoke tests, pois eles irão validar a parte mais básica e vital da aplicação antes mesmo de rodar uma bateria completa de automação. Isso reduz o tempo da primeira validação sobre uma entrega e prove um feedback muito rápido para a equipe.
+
+Agora aquele conjunto de testes para fazer uma venda onde o cliente informa o número de cartão de crédito errado, onde ele erra a senha para efetivar a compra e outros possíveis cenários de teste mais "completos" são o conjunto de testes de aceitação.
+
+Cabe dizer aqui que, na verdade, os scripts de automação para ambas as abordagens são os mesmos, o que muda é a ótica: receber um feedback quase instantaneo se os pontos vitais da aplicação continuam funcionando (smoke test) e depois se toda a aplicação (ou parte como uma funcionalidade ou módulo) continua funcionando após as alterações.
+
+Na maioria dos ambientes com contexto ágil a execução do smoke test é diária ou executa mais de uma vez no dia, já os testes de aceitação são executados com menos frequencia por levarem muito mais tempo para executar e prover um feedback
